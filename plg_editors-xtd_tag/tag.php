@@ -8,6 +8,7 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Session\Session;
 use Joomla\CMS\Language\Text;
 
 /**
@@ -37,7 +38,7 @@ class PlgButtonTag extends JPlugin
 	public function onDisplay($name)
 	{
 		$link = 'index.php?option=com_ajax&amp;plugin=tag&format=raw&'
-			. JSession::getFormToken() . '=1&amp;editor=' . $name;
+			. Session::getFormToken() . '=1&amp;editor=' . $name;
 
 		$button = new JObject;
 		$button->modal   = true;
