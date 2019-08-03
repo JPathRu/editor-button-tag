@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
+use Joomla\CMS\Plugin\PluginHelper;
+
 /**
  * Base plugin class
  *
@@ -35,7 +38,7 @@ class PlgAjaxTag extends JPlugin
 		$items = $this->getTags();
 
 		ob_start();
-		require_once JPluginHelper::getLayoutPath($this->_type, $this->_name, 'default');
+		require_once PluginHelper::getLayoutPath($this->_type, $this->_name, 'default');
 		$contents = ob_get_contents();
 		ob_get_clean();
 
@@ -51,9 +54,9 @@ class PlgAjaxTag extends JPlugin
 	 */
 	private function getTags()
 	{
-		JModelLegacy::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_tags/models', 'TagsModel');
+		BaseDatabaseModel::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_tags/models', 'TagsModel');
 
-		$model = JModelLegacy::getInstance('Tags', 'TagsModel', array('ignore_request' => true));
+		$model = BaseDatabaseModel::getInstance('Tags', 'TagsModel', array('ignore_request' => true));
 
 		$model->setState('filter.published', 1);
 		$model->setState('list.ordering', 'title');
