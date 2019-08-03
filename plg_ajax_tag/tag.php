@@ -64,7 +64,7 @@ class PlgAjaxTag extends JPlugin
 
 		$items = $model->getItems();
 
-		if (!empty ($items))
+		if (!empty($items))
 		{
 			JLoader::register('TagsHelperRoute', JPATH_SITE . '/components/com_tags/helpers/route.php');
 
