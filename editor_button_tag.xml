@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="package" method="upgrade">
+	<name>pkg_editor_button_tag</name>
+	<packagename>editor_button_tag</packagename>
+	<creationDate>03/08/2019</creationDate>
+	<author>Dmitry Rekun</author>
+	<authorEmail>d.rekuns@gmail.com</authorEmail>
+	<authorUrl>https://jpath.ru</authorUrl>
+	<copyright>(C) 2019 JPathRu. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<version>1.0.0</version>
+	<description>PKG_EDITOR_BUTTON_TAG_DESCRIPTION</description>
+
+	<blockChildUninstall>true</blockChildUninstall>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.pkg_editor_button_tag.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.pkg_editor_button_tag.sys.ini</language>
+	</languages>
+
+	<files>
+		<folder type="plugin" group="ajax" id="tag" enabled="1">plg_ajax_tag</folder>
+		<folder type="plugin" group="editors-xtd" id="tag" enabled="1">plg_editors-xtd_tag</folder>
+	</files>
+</extension>
